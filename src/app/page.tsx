@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Mic, Keyboard, Globe, Sparkles, Zap, Shield, Download, ChevronRight, Volume2, Type, Settings, Waves, Check } from 'lucide-react';
 import ShaderBackground from '@/components/ui/shader-background';
+import { KaraokeText } from '@/components/blocks/karaoke-text';
 import { TypewriterDemo } from '@/components/blocks/typewriter-demo';
 import { AnimationShowcase } from '@/components/blocks/animation-showcase';
 
@@ -33,9 +34,7 @@ export default function Home() {
             </span>
           </h1>
 
-          <p className="animate-fade-in-up animate-delay-3 text-lg md:text-xl text-[var(--color-muted)] max-w-2xl mx-auto mb-6 leading-relaxed">
-            Press a key. Speak. Watch your words appear in any text field, any app, instantly.
-          </p>
+          <KaraokeText />
 
           <p className="animate-fade-in-up animate-delay-3 text-sm text-white/50 max-w-xl mx-auto mb-10 leading-relaxed">
             No cloud. No account. No internet connection needed. Your voice is processed entirely on your machine. Nothing is ever sent, stored, or shared. Period.
