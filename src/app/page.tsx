@@ -20,7 +20,7 @@ export default function Home() {
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
           <div className="animate-fade-in-up animate-delay-1">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--color-subtle)] text-[var(--color-gold)] text-xs tracking-[0.2em] uppercase mb-8">
-              <Zap className="w-3 h-3" /> Now available for Windows
+              <Shield className="w-3 h-3" /> 100% Offline. Zero internet required.
             </span>
           </div>
 
@@ -33,9 +33,12 @@ export default function Home() {
             </span>
           </h1>
 
-          <p className="animate-fade-in-up animate-delay-3 text-lg md:text-xl text-[var(--color-muted)] max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="animate-fade-in-up animate-delay-3 text-lg md:text-xl text-[var(--color-muted)] max-w-2xl mx-auto mb-6 leading-relaxed">
             Press a key. Speak. Watch your words appear in any text field, any app, instantly.
-            Offline. Private. Free.
+          </p>
+
+          <p className="animate-fade-in-up animate-delay-3 text-sm text-white/50 max-w-xl mx-auto mb-10 leading-relaxed">
+            No cloud. No account. No internet connection needed. Your voice is processed entirely on your machine. Nothing is ever sent, stored, or shared. Period.
           </p>
 
           <div className="animate-fade-in-up animate-delay-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -45,7 +48,7 @@ export default function Home() {
               Get VoiceInk
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
-            <span className="text-sm text-[var(--color-muted)]">Windows 10/11 &middot; Free tier available</span>
+            <span className="text-sm text-[var(--color-muted)]">Windows 10/11 &middot; Works without WiFi</span>
           </div>
         </div>
 
@@ -88,7 +91,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: <Zap />, title: "Instant", desc: "Press Alt+A (or your custom shortcut), speak, done. Text appears where your cursor is." },
-              { icon: <Shield />, title: "100% Offline", desc: "Whisper AI runs locally on your machine. Your voice never leaves your computer. Ever." },
+              { icon: <Shield />, title: "No Internet. Ever.", desc: "Runs on your CPU. Works in airplane mode, on a submarine, in a cabin with no signal. Your voice never touches a server." },
               { icon: <Globe />, title: "Auto Language", desc: "Speaks French at home, English at work? VoiceInk detects the language automatically." },
               { icon: <Type />, title: "Custom Words", desc: "Add names, brands, and technical terms. VoiceInk learns your vocabulary." },
               { icon: <Waves />, title: "7 Animations", desc: "Gold Pulse, Waveform, Ripple, Minimal, Neon Ring, Spin, Silk Wave. Pick your vibe." },
@@ -103,6 +106,22 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== OFFLINE PRIVACY BANNER ===== */}
+      <section className="py-20 px-6 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-green-500/5 border border-green-500/20 mb-8">
+            <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
+            <span className="text-green-400 text-sm font-medium tracking-wide">Disconnect your WiFi. VoiceInk still works.</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-black mb-6" style={{ fontFamily: 'Cabinet Grotesk, Satoshi, sans-serif' }}>
+            Your words stay on <span className="text-[var(--color-gold)]">your machine</span>.
+          </h2>
+          <p className="text-[var(--color-muted)] text-lg max-w-2xl mx-auto leading-relaxed">
+            VoiceInk uses Whisper AI running entirely on your CPU. No internet connection required. No servers processing your voice. No data leaving your computer. Not now, not ever. Your conversations, your medical notes, your private thoughts; they stay private.
+          </p>
         </div>
       </section>
 
@@ -149,9 +168,9 @@ export default function Home() {
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { num: "0", suffix: "ms", label: "Cloud latency" },
-            { num: "100", suffix: "%", label: "Offline" },
+            { num: "0", suffix: "", label: "Internet needed" },
             { num: "99", suffix: "+", label: "Languages" },
-            { num: "0", suffix: "$", label: "Forever" },
+            { num: "$19", suffix: "", label: "Lifetime access" },
           ].map((s, i) => (
             <div key={i}>
               <div className="text-4xl md:text-5xl font-black text-[var(--color-gold)]" style={{ fontFamily: 'Cabinet Grotesk, Satoshi, sans-serif' }}>
@@ -168,12 +187,20 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(201,168,76,0.08),transparent_60%)]" />
 
         <div className="relative z-10 max-w-4xl mx-auto">
+          {/* Early access banner */}
+          <div className="flex justify-center mb-8">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--color-gold)]/10 border border-[var(--color-gold)]/30">
+              <Sparkles className="w-4 h-4 text-[var(--color-gold)]" />
+              <span className="text-[var(--color-gold)] text-sm font-semibold">Early Access: $19 lifetime price. No subscription. Ever.</span>
+            </div>
+          </div>
+
           <div className="text-center mb-16">
             <span className="text-xs tracking-[0.2em] uppercase text-[var(--color-gold-dim)] mb-4 block">Pricing</span>
             <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ fontFamily: 'Cabinet Grotesk, Satoshi, sans-serif' }}>
-              Simple. Honest.
+              Pay once. <span className="text-[var(--color-gold)]">Own forever.</span>
             </h2>
-            <p className="text-[var(--color-muted)] text-lg">No subscription. Pay once, own forever.</p>
+            <p className="text-[var(--color-muted)] text-lg">No subscription fees. No recurring charges. One payment, lifetime updates.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
