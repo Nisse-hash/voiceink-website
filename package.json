@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@clerk/backend": "^3.2.3",
     "@clerk/nextjs": "^7.0.7",
     "@splinetool/react-spline": "^4.0.0",
     "lucide-react": "^0.468.0",
