@@ -69,7 +69,9 @@ const ShaderBackground = () => {
       vec2 fragCoord = gl_FragCoord.xy;
       vec4 fragColor;
       vec2 uv = fragCoord.xy / iResolution.xy;
-      vec2 space = (fragCoord - iResolution.xy / 2.0) / iResolution.x * 2.0 * scale;
+      vec2 center = iResolution.xy / 2.0;
+      center.y += iResolution.y * 0.15;
+      vec2 space = (fragCoord - center) / iResolution.x * 2.0 * scale;
 
       float horizontalFade = 1.0 - (cos(uv.x * 6.28) * 0.5 + 0.5);
       float verticalFade = 1.0 - (cos(uv.y * 6.28) * 0.5 + 0.5);
