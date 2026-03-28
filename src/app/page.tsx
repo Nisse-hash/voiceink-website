@@ -15,8 +15,9 @@ export default function Home() {
         {/* WebGL shader flowing lines background */}
         <ShaderBackground />
 
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,#0A0A0F_75%)] z-[1]" />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-[#0A0A0F]/60 z-[1]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_10%,#0A0A0F_65%)] z-[1]" />
 
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
           <div className="animate-fade-in-up animate-delay-1">
