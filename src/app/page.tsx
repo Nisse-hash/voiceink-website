@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Mic, Keyboard, Globe, Sparkles, Zap, Shield, Download, ChevronRight, Volume2, Type, Settings, Waves, Check } from 'lucide-react';
-import { SilkWaveHero } from '@/components/blocks/silk-wave-hero';
+import ShaderBackground from '@/components/ui/shader-background';
 import { TypewriterDemo } from '@/components/blocks/typewriter-demo';
 import { AnimationShowcase } from '@/components/blocks/animation-showcase';
 
@@ -11,11 +11,11 @@ export default function Home() {
     <main>
       {/* ===== HERO ===== */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-        {/* Silk wave background */}
-        <SilkWaveHero />
+        {/* WebGL shader flowing lines background */}
+        <ShaderBackground />
 
-        {/* Radial gradient overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,#0A0A0F_70%)]" />
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,#0A0A0F_75%)] z-[1]" />
 
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
           <div className="animate-fade-in-up animate-delay-1">
@@ -234,11 +234,12 @@ export default function Home() {
             {/* Pro tier */}
             <div className="p-8 rounded-2xl border-2 border-[var(--color-gold)]/50 bg-[var(--color-ink)] relative overflow-hidden">
               <div className="absolute top-0 right-0 px-3 py-1 bg-[var(--color-gold)] text-[var(--color-ink)] text-xs font-bold rounded-bl-lg">LAUNCH PRICE</div>
-              <h3 className="text-xl font-bold mb-2">Pro</h3>
+              <h3 className="text-xl font-bold mb-1">Pro</h3>
+              <p className="text-xs text-[var(--color-gold-dim)] tracking-wide mb-3">Lifetime early access price</p>
               <div className="mb-6">
                 <span className="text-4xl font-black text-[var(--color-gold)]" style={{ fontFamily: 'Cabinet Grotesk, Satoshi, sans-serif' }}>$19</span>
                 <span className="text-[var(--color-muted)] ml-2 line-through">$29</span>
-                <span className="text-sm text-[var(--color-muted)] ml-1">one-time</span>
+                <span className="text-sm text-[var(--color-muted)] ml-1">one-time, forever</span>
               </div>
               <ul className="space-y-3 mb-8">
                 {[
