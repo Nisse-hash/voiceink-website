@@ -1,28 +1,38 @@
 'use client';
 
 import { Download, Check, Mic, ArrowRight } from 'lucide-react';
+import { useUser, UserButton } from '@clerk/nextjs';
 
 export default function DownloadPage() {
+  const { user } = useUser();
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-6 py-20 relative overflow-hidden">
-      {/* Background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,168,76,0.06),transparent_60%)]" />
 
       <div className="relative z-10 text-center max-w-2xl mx-auto">
-        {/* Success icon */}
+        {/* User greeting */}
+        <div className="flex items-center justify-center gap-3 mb-8">
+          <UserButton  />
+          {user && (
+            <span className="text-sm text-[var(--color-muted)]">
+              {user.emailAddresses[0]?.emailAddress}
+            </span>
+          )}
+        </div>
+
         <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[var(--color-gold-bright)] to-[var(--color-gold)] flex items-center justify-center mx-auto mb-8 shadow-[0_0_40px_rgba(201,168,76,0.3)]">
           <Check className="w-10 h-10 text-[var(--color-ink)]" strokeWidth={3} />
         </div>
 
         <h1 className="text-4xl md:text-5xl font-black mb-4" style={{ fontFamily: 'Cabinet Grotesk, Satoshi, sans-serif' }}>
-          Thank you!
+          Thank you{user?.firstName ? `, ${user.firstName}` : ''}!
         </h1>
 
         <p className="text-xl text-[var(--color-muted)] mb-10 leading-relaxed">
-          VoiceInk Pro is yours. Download, install, and start speaking.
+          VoiceInk Pro is yours. Download, install, and sign in with this account to activate.
         </p>
 
-        {/* Download button */}
         <a
           href="https://github.com/Nisse-hash/voice-input-button/releases/latest/download/VoiceInk.Setup.0.1.0.exe"
           className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[var(--color-gold-bright)] to-[var(--color-gold)] text-[var(--color-ink)] font-bold rounded-xl text-xl transition-all hover:scale-105 hover:shadow-[0_0_60px_rgba(201,168,76,0.3)] mb-12"
@@ -32,10 +42,8 @@ export default function DownloadPage() {
           <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
         </a>
 
-        {/* Quick start steps */}
         <div className="bg-[var(--color-ink-light)] border border-[var(--color-subtle)] rounded-2xl p-8 text-left">
           <h3 className="text-lg font-bold mb-6 text-center">Quick Start</h3>
-
           <div className="space-y-5">
             {[
               { step: '1', text: 'Run the installer (one click, no admin needed)' },
@@ -53,7 +61,6 @@ export default function DownloadPage() {
           </div>
         </div>
 
-        {/* Footer hint */}
         <p className="mt-8 text-sm text-[var(--color-muted)]">
           Right-click the tray icon &rarr; Settings to customize your shortcut, language, and animation.
         </p>

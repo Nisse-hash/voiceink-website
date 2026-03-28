@@ -2,14 +2,38 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Mic, Keyboard, Globe, Sparkles, Zap, Shield, Download, ChevronRight, Volume2, Type, Settings, Waves, Check } from 'lucide-react';
+import { SignInButton, SignOutButton, UserButton } from '@clerk/nextjs';
+import { useAuth } from '@clerk/nextjs';
 import ShaderBackground from '@/components/ui/shader-background';
 import { KaraokeText } from '@/components/blocks/karaoke-text';
 import { TypewriterDemo } from '@/components/blocks/typewriter-demo';
 import { AnimationShowcase } from '@/components/blocks/animation-showcase';
 
 export default function Home() {
+  const { isSignedIn, isLoaded } = useAuth();
+
   return (
     <main>
+      {/* ===== NAV ===== */}
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-[var(--color-ink)]/80 backdrop-blur-md border-b border-white/5">
+        <div className="flex items-center gap-2.5">
+          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[var(--color-gold-bright)] to-[var(--color-gold)] flex items-center justify-center">
+            <Mic className="w-3.5 h-3.5 text-[var(--color-ink)]" />
+          </div>
+          <span className="font-bold text-base">VoiceInk</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <a href="#pricing" className="text-sm text-[var(--color-muted)] hover:text-white transition-colors">Pricing</a>
+          {isLoaded && !isSignedIn && (
+            <SignInButton mode="modal">
+              <button className="text-sm text-[var(--color-gold)] hover:text-[var(--color-gold-bright)] transition-colors cursor-pointer">Sign in</button>
+            </SignInButton>
+          )}
+          {isLoaded && isSignedIn && (
+            <UserButton />
+          )}
+        </div>
+      </nav>
       {/* ===== HERO ===== */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
         {/* WebGL shader flowing lines background */}
