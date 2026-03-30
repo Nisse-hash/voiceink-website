@@ -85,3 +85,50 @@ body {
   z-index: 1000;
   opacity: 0.4;
 }
+
+/* Heart balloon animations */
+@keyframes balloon-bob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes balloon-fly {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  30% { transform: translateY(-80px) scale(1.1) rotate(-5deg); opacity: 1; }
+  60% { transform: translateY(-300px) scale(0.9) rotate(5deg); opacity: 0.7; }
+  100% { transform: translateY(-800px) scale(0.4) rotate(-10deg); opacity: 0; }
+}
+
+@keyframes string-sway {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
+
+@keyframes sparkle-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+  50% { transform: translate(3px, -4px) scale(1.5); opacity: 0; }
+}
+
+@keyframes sparkle-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  50% { transform: translate(-4px, -3px) scale(1.8); opacity: 0; }
+}
+
+@keyframes sparkle-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  50% { transform: translate(2px, 3px) scale(1.4); opacity: 0; }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-balloon-bob { animation: balloon-bob 3s ease-in-out infinite; }
+.animate-balloon-fly { animation: balloon-fly 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.animate-string-sway { animation: string-sway 3s ease-in-out infinite; transform-origin: top center; }
+.animate-sparkle-1 { animation: sparkle-1 2s ease-in-out infinite; }
+.animate-sparkle-2 { animation: sparkle-2 2.5s ease-in-out infinite 0.5s; }
+.animate-sparkle-3 { animation: sparkle-3 3s ease-in-out infinite 1s; }
+.animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
+.animate-fade-in { animation: fade-in-up 0.6s ease-out; }

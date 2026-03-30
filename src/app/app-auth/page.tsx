@@ -13,8 +13,9 @@ export default function AppAuthPage() {
     if (isLoaded && isSignedIn && user) {
       const email = user.emailAddresses[0]?.emailAddress || '';
       const name = user.firstName || '';
+      const image = user.imageUrl || '';
       // Redirect to a URL the Electron BrowserWindow can detect
-      window.location.href = `/app-auth/success?userId=${user.id}&email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
+      window.location.href = `/app-auth/success?userId=${user.id}&email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&image=${encodeURIComponent(image)}`;
     }
   }, [isLoaded, isSignedIn, user]);
 

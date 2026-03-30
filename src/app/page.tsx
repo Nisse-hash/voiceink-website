@@ -250,7 +250,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <a href="https://github.com/Nisse-hash/voice-input-button/releases/latest" className="block w-full text-center py-3 rounded-xl border border-[var(--color-subtle)] text-[var(--color-muted)] hover:border-[var(--color-gold-dim)] hover:text-white transition-all font-medium">
+              <a href="/api/download" className="block w-full text-center py-3 rounded-xl border border-[var(--color-subtle)] text-[var(--color-muted)] hover:border-[var(--color-gold-dim)] hover:text-white transition-all font-medium">
                 Download Free
               </a>
             </div>
@@ -281,14 +281,14 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <a href="https://biling.ibuiltthis.ai/b/test_6oU28rccW6LLcm83o628800" className="group block w-full text-center py-3.5 rounded-xl bg-gradient-to-r from-[var(--color-gold-bright)] to-[var(--color-gold)] text-[var(--color-ink)] font-bold text-lg transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(201,168,76,0.3)]">
+              <a href="https://biling.ibuiltthis.ai/b/6oUcN56SCgml5XK8Iq28809" className="group block w-full text-center py-3.5 rounded-xl bg-gradient-to-r from-[var(--color-gold-bright)] to-[var(--color-gold)] text-[var(--color-ink)] font-bold text-lg transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(201,168,76,0.3)]">
                 Get Pro &mdash; $19
               </a>
             </div>
           </div>
 
           <p className="text-center mt-8 text-sm text-[var(--color-muted)]">
-            No account needed &middot; No data collection &middot; 100% offline &middot; macOS coming soon
+            No account needed &middot; No data collection &middot; 100% offline &middot; Windows &amp; Mac
           </p>
         </div>
       </section>

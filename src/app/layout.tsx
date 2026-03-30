@@ -6,6 +6,25 @@ export const metadata: Metadata = {
   title: "VoiceInk — Your voice, in ink.",
   description: "Press a key, speak, watch your words appear. Offline speech-to-text that works everywhere on your desktop. Free, private, instant.",
   keywords: ["voice typing", "speech to text", "dictation", "whisper", "offline", "desktop app"],
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: "VoiceInk — Your voice, in ink.",
+    description: "Press a key, speak, watch your words appear. Offline speech-to-text for Mac and Windows.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    siteName: "VoiceInk",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "VoiceInk — Your voice, in ink.",
+    description: "Press a key, speak, watch your words appear. Offline speech-to-text for Mac and Windows.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
